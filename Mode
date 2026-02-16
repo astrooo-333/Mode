@@ -170,10 +170,12 @@ game:GetService("RunService").Heartbeat:Connect(function()
     end
 end)
 
-local godModeEnabled = false
-createSwitch("God Mode", 0.8, function(state)
-    godModeEnabled = state
-end)
+local function godMode()
+    while true do
+        if humanoid and humanoid.Health > 0 then
+            humanoid.MaxHealth = math.huge
+            humanoid.Health = math.huge
+        end
 
 game:GetService("RunService").Heartbeat:Connect(function()
     if godModeEnabled then
