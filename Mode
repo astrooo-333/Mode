@@ -176,7 +176,9 @@ local function godMode()
             humanoid.MaxHealth = math.huge
             humanoid.Health = math.huge
         end
-
+      wait(0.1)
+    end
+end
 game:GetService("RunService").Heartbeat:Connect(function()
     if godModeEnabled then
         for _, part in pairs(character:GetChildren()) do
